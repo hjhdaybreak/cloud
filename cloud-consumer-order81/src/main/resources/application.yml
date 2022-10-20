@@ -1,0 +1,15 @@
+eureka:
+  instance:
+    #实例名字
+    instance-id: cloud-order-consumer81
+  client:
+    # Eureka Server地址
+    service-url:
+#      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/
+       defaultZone: http://localhost:7001/eureka/,http://localhost:7002/eureka/
+spring:
+  application:
+    # 设置应用名字
+    name: cloud-order-consumer
+server:
+  port: 81

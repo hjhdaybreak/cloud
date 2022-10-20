@@ -13,9 +13,9 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 @EnableEurekaClient
 @Slf4j
 
-public class OrderMain80 {
+public class OrderMain81 {
     public static void main(String[] args) {
-        SpringApplication.run(OrderMain80.class, args);
+        SpringApplication.run(OrderMain81.class, args);
         log.info("*************** 订单服务消费者启动成功 *************");
     }
 }
