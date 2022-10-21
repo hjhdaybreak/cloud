@@ -1,0 +1,29 @@
+eureka:
+  instance:
+    #实例名字
+    instance-id: cloud-order-resilience4j-consumer81
+  client:
+    # Eureka Server地址
+    service-url:
+      defaultZone: http://localhost:7001/eureka/,http://localhost:7002/eureka/
+spring:
+  application:
+    # 设置应用名字
+    name: cloud-order-consumer
+server:
+  port: 81
+
+
+  # 超时机制
+resilience4j:
+  timelimiter:
+    instances:
+      delay:
+        # 设置超时时间 (系统默认 5 s)秒
+        timeoutDuration: 2
+
+
+
+
+
+
