@@ -1,0 +1,28 @@
+eureka:
+  instance:
+    #实例名字
+    instance-id: cloud-order-openfeign-consumer81
+  client:
+    # Eureka Server地址
+    service-url:
+      defaultZone: http://localhost:7001/eureka/,http://localhost:7002/eureka/
+spring:
+  application:
+    # 设置应用名字
+    name: cloud-order-consumer
+server:
+  port: 81
+
+logging:
+  level:
+    com.bee.service: debug
+
+# 默认超时时间
+feign:
+  client:
+    config:
+      default:
+        # 连接超时时间
+        connectTimeout: 2000
+          # 读取超时时间
+        readTimeout: 2000

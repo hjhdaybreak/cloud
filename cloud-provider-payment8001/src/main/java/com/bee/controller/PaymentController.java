@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.concurrent.TimeUnit;
+
 @Slf4j
 @RestController
 @RequestMapping("/payment")
@@ -18,4 +20,20 @@ public class PaymentController {
     public String index() {
         return "payment  success";
     }
+
+    /**
+     * 测试超时机制
+     * @return
+     */
+    @GetMapping("timeout")
+    public String paymentFeignTimeOut() {
+        try {
+            TimeUnit.SECONDS.sleep(4);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return "payment success";
+    }
+
+
 }
