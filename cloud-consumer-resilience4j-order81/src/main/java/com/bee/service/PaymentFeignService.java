@@ -16,5 +16,9 @@ public interface PaymentFeignService {
 
     @GetMapping("/payment/timeout")
     String timeout();
+
+
+    @GetMapping("/payment/index")
+     String index();
 }
 

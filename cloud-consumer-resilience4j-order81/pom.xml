@@ -52,6 +52,15 @@
             <artifactId>spring-cloud-starter-circuitbreaker-resilience4j</artifactId>
         </dependency>
 
+
+        <!--        服务隔离依赖-->
+        <dependency>
+            <groupId>io.github.resilience4j</groupId>
+            <artifactId>resilience4j-bulkhead</artifactId>
+            <version>1.7.0</version>
+        </dependency>
+
+
     </dependencies>
 
 </project>

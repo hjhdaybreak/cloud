@@ -18,11 +18,19 @@ public class PaymentController {
      */
     @GetMapping("/index")
     public String index() {
+        /* 测试慢调用熔断降级时打开
+        try {
+            TimeUnit.SECONDS.sleep(10);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }*/
+
         return "payment  success";
     }
 
     /**
      * 测试超时机制
+     *
      * @return
      */
     @GetMapping("timeout")
