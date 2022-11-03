@@ -1,0 +1,16 @@
+server:
+  port: 8002
+eureka:
+  instance:
+    #实例名字
+    instance-id: cloud-payment-provider8002
+  client:
+    service-url:
+      # Eureka server 地址
+      # defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/
+      defaultZone: http://localhost:7001/eureka/,http://localhost:7002/eureka/
+
+spring:
+  application:
+    # 设置应用名词
+    name: cloud-payment-provider

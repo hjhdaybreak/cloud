@@ -12,15 +12,15 @@ import java.util.concurrent.TimeUnit;
 @RestController
 @RequestMapping("/payment")
 public class PaymentController {
+
+    @Value("${server.port}")
+    private String port;
+
     /**
      * 测试服务调用
      *
      * @return
      */
-
-    @Value("${server.port}")
-    private String port;
-
     @GetMapping("/index")
     public String index() {
 
@@ -49,10 +49,8 @@ public class PaymentController {
         return "payment success";
     }
 
-
     @GetMapping("lb1")
     public String lb() {
         return port;
     }
-
 }
