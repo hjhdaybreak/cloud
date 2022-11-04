@@ -1,0 +1,14 @@
+eureka:
+  instance:
+    #实例名字
+    instance-id: cloud-auth-user6500
+  client:
+    # Eureka Server地址
+    service-url:
+      defaultZone: http://localhost:7001/eureka/,http://localhost:7002/eureka/
+spring:
+  application:
+    # 设置应用名字
+    name: cloud-auth-user
+server:
+  port: 6500

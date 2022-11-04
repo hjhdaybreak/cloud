@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="cloud-provider-payment8002" />
+        <module name="cloud-auth-user6500" />
         <module name="cloud-eureka-server7001" />
         <module name="cloud-gateway-gateway9527" />
         <module name="cloud-provider-payment8001" />

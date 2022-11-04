@@ -3,8 +3,11 @@ package com.bee.config;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.gateway.filter.GatewayFilter;
+import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.cloud.gateway.filter.factory.AbstractGatewayFilterFactory;
 import org.springframework.stereotype.Component;
+import org.springframework.web.server.ServerWebExchange;
+import reactor.core.publisher.Mono;
 
 import java.util.Arrays;
 import java.util.List;
@@ -38,12 +41,15 @@ public class LogGatewayFilterFactory extends AbstractGatewayFilterFactory<LogGat
 
     @Override
     public GatewayFilter apply(Config config) {
-        return ((exchange, chain) -> {
-            if (config.consoleLog) {
-                log.info("console日志已开启...");
+        return new GatewayFilter() {
+            @Override
+            public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
+                if (config.consoleLog) {
+                    log.info("console日志已开启...");
+                }
+                return chain.filter(exchange);
             }
-            return chain.filter(exchange);
-        });
+        };
     }
 
 
