@@ -1,0 +1,30 @@
+server:
+  port: 8001
+eureka:
+  instance:
+    # 实例名字
+    instance-id: stream-producer8001
+  client:
+    service-url:
+      # 指定单机eureka server地址
+      #defaultZone: http://localhost:7001/eureka/
+      defaultZone: http://localhost:7001/eureka/,http://localhost:7002/eureka/
+spring:
+  application:
+    name: stream-producer
+  rabbitmq:
+    port: 5672
+    host: 192.168.8.129
+    username: guest
+    password: guest
+
+  cloud:
+    stream:
+      bindings:
+        # 广播消息
+        myBroadcast-out-0: # 生产者绑定名称，myBroadcast是自定义的绑定名称，out代表生产者，0是固定写法
+          destination: my-broadcast-topic  # 对应的真实的 RabbitMQ Exchange
+
+        # 分组消息
+        myGroup-out-0: # 生产者绑定名称
+          destination: my-group-topic  # 对应的真实的 RabbitMQ Exchange
